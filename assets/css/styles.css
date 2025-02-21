@@ -17,12 +17,12 @@ a {
   color: inherit;
 }
 
-/* Header / Hero Section con fondo de cielo nocturno y estrellas fugaces */
+/* Asegúrate de que el header tenga position relative y overflow hidden */
 header {
   position: relative;
   overflow: hidden;
-  background: #000; /* fondo negro, como el cielo de noche */
-  color: #ffffff;
+  background: #000; /* Cielo nocturno */
+  color: #fff;
   text-align: center;
   padding: 100px 20px;
 }
@@ -34,86 +34,101 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* para que no interfiera con la interacción */
+  pointer-events: none;
 }
 
-/* Estilo base para cada estrella fugaz (pixelado) */
+/* Estilo base para cada estrella (pixelada) */
 .shooting-star {
   position: absolute;
   width: 4px;
   height: 4px;
   background: #fff;
   image-rendering: pixelated;
-  animation: shooting 2s linear infinite;
-  animation-timing-function: steps(10, end);
+  animation: shooting 3s linear infinite;
 }
 
-/* Pseudo-elemento para la "cola" pixelada */
+/* Pseudo-elemento para la cola larga */
 .shooting-star::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 4px;
-  height: 12px;
+  height: 40px; /* Cola más larga */
   background: #fff;
   image-rendering: pixelated;
-  opacity: 0.5;
-  /* Posición de la cola respecto a la estrella; ajusta según prefieras */
+  opacity: 0.8;
+  /* La cola se desplaza ligeramente respecto a la estrella para crear efecto */
   transform: translate(4px, -4px);
-  animation: tail 2s linear infinite;
-  animation-timing-function: steps(10, end);
+  animation: tail 3s linear infinite;
 }
 
-/* Distribución y delays para darle aleatoriedad (inician en la parte superior derecha) */
+/* Distribución de las estrellas: ubicadas mayormente en la parte superior derecha */
 .shooting-stars .shooting-star:nth-child(1) {
   top: 10%;
-  left: 80%;
+  left: 85%;
   animation-delay: 0s;
 }
 .shooting-stars .shooting-star:nth-child(2) {
-  top: 20%;
-  left: 85%;
+  top: 25%;
+  left: 90%;
   animation-delay: 0.5s;
 }
 .shooting-stars .shooting-star:nth-child(3) {
-  top: 30%;
-  left: 75%;
+  top: 40%;
+  left: 80%;
   animation-delay: 1s;
 }
 .shooting-stars .shooting-star:nth-child(4) {
-  top: 40%;
-  left: 90%;
+  top: 55%;
+  left: 95%;
   animation-delay: 1.5s;
 }
 .shooting-stars .shooting-star:nth-child(5) {
-  top: 15%;
-  left: 70%;
+  top: 70%;
+  left: 75%;
   animation-delay: 2s;
 }
 
-/* Keyframes para mover la estrella (de top-right a bottom-left) */
+/* Keyframes para mover la estrella: de top-right a bottom-left */
 @keyframes shooting {
   0% {
     opacity: 1;
     transform: translate(0, 0);
   }
+  80% {
+    opacity: 1;
+    transform: translate(-300px, 300px); /* Ajusta estos valores para la distancia deseada */
+  }
   100% {
     opacity: 0;
-    transform: translate(-200px, 200px);
+    transform: translate(-300px, 300px);
   }
 }
 
-/* Keyframes para la cola, que se desvanece al final */
+/* Keyframes para la cola: se mantiene durante gran parte de la animación y luego se desvanece */
 @keyframes tail {
   0% {
-    opacity: 0.5;
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.8;
   }
   100% {
     opacity: 0;
   }
 }
 
+
+/* Header / Hero Section con fondo de cielo nocturno y estrellas fugaces */
+header {
+  position: relative;
+  overflow: hidden;
+  background: #000; /* fondo negro, como el cielo de noche */
+  color: #ffffff;
+  text-align: center;
+  padding: 100px 20px;
+}
 
 /* Estilos para el título y demás elementos del header */
 header h1 {
