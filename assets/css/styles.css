@@ -17,44 +17,92 @@ a {
   color: inherit;
 }
 
-/* Header / Hero Section */
-/* header {
-  background: url('header-image.jpg') no-repeat center center/cover;
-  color: #ffffff;
-  text-align: center;
-  padding: 100px 20px;
-} */
-/* Header / Hero Section with Animated Gradient */
+/* Header / Hero Section con fondo de cielo nocturno y estrellas fugaces */
 header {
-  /* Animated gradient background */
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+  background: #000; /* fondo negro, como el cielo de noche */
   color: #ffffff;
   text-align: center;
   padding: 100px 20px;
 }
 
-@keyframes gradientAnimation {
+/* Contenedor para las estrellas fugaces */
+.shooting-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* para que no interfiera con la interacción */
+}
+
+/* Cada estrella fugaz */
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(white, rgba(255,255,255,0));
+  opacity: 0;
+  transform: rotate(45deg);
+  animation: shooting 3s linear infinite;
+}
+
+/* Distribución y delays para darle aleatoriedad */
+.shooting-stars .shooting-star:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.shooting-stars .shooting-star:nth-child(2) {
+  top: 40%;
+  left: 0%;
+  animation-delay: 1s;
+}
+.shooting-stars .shooting-star:nth-child(3) {
+  top: 60%;
+  left: 30%;
+  animation-delay: 2s;
+}
+.shooting-stars .shooting-star:nth-child(4) {
+  top: 10%;
+  left: 50%;
+  animation-delay: 3s;
+}
+.shooting-stars .shooting-star:nth-child(5) {
+  top: 80%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+/* Keyframes para la animación de las estrellas fugaces */
+@keyframes shooting {
   0% {
-    background-position: 0% 50%;
+    opacity: 0;
+    transform: translate(0, 0) scale(0.5) rotate(45deg);
   }
-  50% {
-    background-position: 100% 50%;
+  10% {
+    opacity: 1;
   }
   100% {
-    background-position: 0% 50%;
+    opacity: 0;
+    transform: translate(300px, 300px) scale(1) rotate(45deg);
   }
 }
 
+/* Estilos para el título y demás elementos del header */
 header h1 {
   font-size: 3em;
   margin-bottom: 10px;
+  position: relative; /* para que queden por encima de las estrellas */
+  z-index: 1;
 }
 
 header p {
   font-size: 1.5em;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 header .cta {
@@ -63,7 +111,10 @@ header .cta {
   padding: 10px 20px;
   border-radius: 3px;
   display: inline-block;
+  position: relative;
+  z-index: 1;
 }
+
 
 /* Navigation */
 nav {
