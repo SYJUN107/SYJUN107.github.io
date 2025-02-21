@@ -1,61 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>My Personal Website</title>
-  <!-- External stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Your Name] – Data Scientist & ML Engineer</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header / Hero Section -->
   <header>
-    <h1>Welcome to My Personal Website</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <h1>[Your Name]</h1>
+    <p>Data Scientist & Machine Learning Engineer</p>
+    <a class="cta" href="#contact">Contact Me</a>
   </header>
 
-  <!-- Main section -->
-  <main>
-    <!-- About Me section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>This is where you can include a brief description of who you are, your interests, and your background.</p>
-      <img src="your-photo.jpg" alt="Personal photo">
-    </section>
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#work">Work Experience</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects & Awards</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <!-- Projects section -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <article>
-        <h3>Project 1</h3>
-        <p>A brief description of the project.</p>
-        <a href="https://project1link.com">Learn more</a>
-      </article>
-      <article>
-        <h3>Project 2</h3>
-        <p>A brief description of the project.</p>
-        <a href="https://project2link.com">Learn more</a>
-      </article>
-    </section>
-  </main>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am passionate about data science and its ability to transform raw data into actionable insights. With a strong foundation in programming, data analysis, and machine learning, I enjoy solving complex problems and uncovering trends that drive business improvement. I have experience managing teams in technical projects and continually expand my skills in data modeling, AI, and big data technologies. My expertise in fields such as time series analysis is just one example of my diverse interests within AI.
+    </p>
+  </section>
 
-  <!-- Optional sidebar -->
-  <aside>
-    <h2>Blog or News</h2>
-    <p>A space to share updates or articles related to your interests.</p>
-  </aside>
+  <!-- Work Experience Section -->
+  <section id="work">
+    <h2>Work Experience</h2>
+    <div class="section-grid">
+      <div class="card">
+        <h3>Software Engineer Intern</h3>
+        <p><strong>Samsung Zhilabs</strong> | 07/2023 – 08/2023</p>
+        <ul>
+          <li>Developed a program for a client to extract and compare data configurations from multiple sites over different days.</li>
+          <li>Optimized Java code for efficient processing of large-scale files, ensuring effective time and memory management.</li>
+          <li>Collaborated with the client to align project outcomes with their expectations.</li>
+        </ul>
+      </div>
+      <!-- Add more work experiences as needed -->
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="section-grid">
+      <div class="card">
+        <h3>B.Sc. in Computer Science Engineering</h3>
+        <p><strong>UC3M</strong> | 2020-2024</p>
+        <p>
+          Undergraduate Thesis: "Study of Volunteer Profiles in Clinical Trials" (Score: 9.6). Applied supervised and unsupervised learning methods with a focus on explainability.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Dual Master in Computer Science Engineering and Applied AI</h3>
+        <p><strong>UC3M</strong> | 2024-2026</p>
+      </div>
+      <div class="card">
+        <h3>Certifications</h3>
+        <p>Udemy – Python for Data Science and Machine Learning Bootcamp</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="section-grid">
+      <div class="card">
+        <h3>Programming Languages</h3>
+        <p>Python, Java</p>
+      </div>
+      <div class="card">
+        <h3>Technical Skills</h3>
+        <p>Machine Learning, Data Analytics, Data Preprocessing, Testing & Debugging, Big Data, Data Modeling, AI</p>
+      </div>
+      <div class="card">
+        <h3>Leadership</h3>
+        <p>Team Management, Project Coordination</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects & Awards Section -->
+  <section id="projects">
+    <h2>Projects & Awards</h2>
+    <div class="section-grid">
+      <div class="card">
+        <h3>Undergraduate Thesis</h3>
+        <p>
+          Study of Volunteer Profiles in Clinical Trials using supervised and unsupervised learning methods with a focus on explainability. (Score: 9.6)
+        </p>
+      </div>
+      <div class="card">
+        <h3>Datathon 2024</h3>
+        <p>
+          1st Place in Datathon 2024 organized by MEW, UC3M, and Securitas.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Datathon 2023</h3>
+        <p>
+          1st Place in Datathon 2023 organized by MEW, UC3M.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Award for Creativity</h3>
+        <p>
+          2024 Award for Creativity in Digital Transformation in Occupational Health and Safety (UC3M).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-form">
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 My Personal Website. All rights reserved.</p>
-    <p><a href="mailto:email@example.com">email@example.com</a></p>
+    <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+    <p>
+      <a href="#">LinkedIn</a> | 
+      <a href="#">GitHub</a>
+    </p>
   </footer>
 </body>
 </html>
