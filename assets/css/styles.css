@@ -27,6 +27,7 @@ header {
   padding: 100px 20px;
 }
 
+/* Base para las shooting stars */
 .shooting-star {
   position: absolute;
   width: 2px;
@@ -52,7 +53,34 @@ header {
   animation: tail 3s linear infinite;
 }
 
-/* Keyframes para la animación principal de la estrella */
+/* Distribución de las estrellas con delays individuales */
+.shooting-stars .shooting-star:nth-child(1) {
+  top: 10%;
+  left: 80%;
+  animation-delay: 0s;
+}
+.shooting-stars .shooting-star:nth-child(2) {
+  top: 30%;
+  left: 60%;
+  animation-delay: 1s;
+}
+.shooting-stars .shooting-star:nth-child(3) {
+  top: 50%;
+  left: 90%;
+  animation-delay: 2s;
+}
+.shooting-stars .shooting-star:nth-child(4) {
+  top: 70%;
+  left: 40%;
+  animation-delay: 3s;
+}
+.shooting-stars .shooting-star:nth-child(5) {
+  top: 20%;
+  left: 30%;
+  animation-delay: 4s;
+}
+
+/* Keyframes para la animación de la estrella */
 @keyframes shooting {
   0% {
     opacity: 0;
@@ -63,15 +91,16 @@ header {
   }
   80% {
     opacity: 1;
-    transform: translate(-300px, 300px) scale(1) rotate(-45deg);
+    /* Ajusta la distancia de movimiento para que las estrellas no salgan del área visible */
+    transform: translate(-150px, 150px) scale(1) rotate(-45deg);
   }
   100% {
     opacity: 0;
-    transform: translate(-320px, 320px) scale(1) rotate(-45deg);
+    transform: translate(-150px, 150px) scale(1) rotate(-45deg);
   }
 }
 
-/* Keyframes para la cola, que se desvanece al final */
+/* Keyframes para la cola */
 @keyframes tail {
   0% {
     opacity: 0.6;
