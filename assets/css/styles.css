@@ -27,68 +27,63 @@ header {
   padding: 100px 20px;
 }
 
-/* Contenedor para las estrellas fugaces */
-.shooting-stars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* para que no interfiera con la interacción */
-}
-
-/* Cada estrella fugaz */
 .shooting-star {
   position: absolute;
   width: 2px;
   height: 80px;
   background: linear-gradient(white, rgba(255,255,255,0));
   opacity: 0;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   animation: shooting 3s linear infinite;
 }
 
-/* Distribución y delays para darle aleatoriedad */
-.shooting-stars .shooting-star:nth-child(1) {
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-.shooting-stars .shooting-star:nth-child(2) {
-  top: 40%;
-  left: 0%;
-  animation-delay: 1s;
-}
-.shooting-stars .shooting-star:nth-child(3) {
-  top: 60%;
-  left: 30%;
-  animation-delay: 2s;
-}
-.shooting-stars .shooting-star:nth-child(4) {
-  top: 10%;
-  left: 50%;
-  animation-delay: 3s;
-}
-.shooting-stars .shooting-star:nth-child(5) {
-  top: 80%;
-  left: 20%;
-  animation-delay: 4s;
+/* Pseudo-elemento para la cola */
+.shooting-star::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(white, rgba(255,255,255,0));
+  transform: rotate(-45deg);
+  filter: blur(3px);
+  opacity: 0;
+  animation: tail 3s linear infinite;
 }
 
-/* Keyframes para la animación de las estrellas fugaces */
+/* Keyframes para la animación principal de la estrella */
 @keyframes shooting {
   0% {
     opacity: 0;
-    transform: translate(0, 0) scale(0.5) rotate(45deg);
+    transform: translate(0, 0) scale(0.5) rotate(-45deg);
   }
   10% {
     opacity: 1;
   }
+  80% {
+    opacity: 1;
+    transform: translate(-300px, 300px) scale(1) rotate(-45deg);
+  }
   100% {
     opacity: 0;
-    transform: translate(300px, 300px) scale(1) rotate(45deg);
+    transform: translate(-320px, 320px) scale(1) rotate(-45deg);
   }
 }
+
+/* Keyframes para la cola, que se desvanece al final */
+@keyframes tail {
+  0% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 
 /* Estilos para el título y demás elementos del header */
 header h1 {
