@@ -17,17 +17,7 @@ a {
   color: inherit;
 }
 
-/* Asegúrate de que el header tenga position relative y overflow hidden */
-header {
-  position: relative;
-  overflow: hidden;
-  background: #000; /* Cielo nocturno */
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-}
 
-/* Contenedor para las estrellas */
 .shooting-stars {
   position: absolute;
   top: 0;
@@ -37,7 +27,7 @@ header {
   pointer-events: none;
 }
 
-/* Estilo base para cada estrella (pixelada) */
+/* Estilo base para cada estrella pixelada */
 .shooting-star {
   position: absolute;
   width: 4px;
@@ -47,7 +37,7 @@ header {
   animation: shooting 3s linear infinite;
 }
 
-/* Pseudo-elemento para la cola larga */
+/* Pseudo-elemento para la cola de la estrella */
 .shooting-star::after {
   content: "";
   position: absolute;
@@ -58,39 +48,38 @@ header {
   background: #fff;
   image-rendering: pixelated;
   opacity: 0.8;
-  /* La cola se desplaza ligeramente respecto a la estrella para crear efecto */
   transform: translate(4px, -4px);
   animation: tail 3s linear infinite;
 }
 
-/* Distribución de las estrellas: ubicadas mayormente en la parte superior derecha */
+/* Posiciones de ejemplo para cada estrella */
 .shooting-stars .shooting-star:nth-child(1) {
-  top: 10%;
-  left: 85%;
+  top: 15%;
+  left: 80%;
   animation-delay: 0s;
 }
 .shooting-stars .shooting-star:nth-child(2) {
-  top: 25%;
+  top: 30%;
   left: 90%;
   animation-delay: 0.5s;
 }
 .shooting-stars .shooting-star:nth-child(3) {
-  top: 40%;
-  left: 80%;
+  top: 45%;
+  left: 70%;
   animation-delay: 1s;
 }
 .shooting-stars .shooting-star:nth-child(4) {
-  top: 55%;
-  left: 95%;
+  top: 60%;
+  left: 85%;
   animation-delay: 1.5s;
 }
 .shooting-stars .shooting-star:nth-child(5) {
-  top: 70%;
-  left: 75%;
+  top: 75%;
+  left: 65%;
   animation-delay: 2s;
 }
 
-/* Keyframes para mover la estrella: de top-right a bottom-left */
+/* Keyframes para mover la estrella en diagonal hacia la izquierda */
 @keyframes shooting {
   0% {
     opacity: 1;
@@ -98,7 +87,7 @@ header {
   }
   80% {
     opacity: 1;
-    transform: translate(-300px, 300px); /* Ajusta estos valores para la distancia deseada */
+    transform: translate(-300px, 300px);
   }
   100% {
     opacity: 0;
@@ -106,17 +95,11 @@ header {
   }
 }
 
-/* Keyframes para la cola: se mantiene durante gran parte de la animación y luego se desvanece */
+/* Keyframes para la cola de la estrella */
 @keyframes tail {
-  0% {
-    opacity: 0.8;
-  }
-  70% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 0;
-  }
+  0% { opacity: 0.8; }
+  70% { opacity: 0.8; }
+  100% { opacity: 0; }
 }
 
 
