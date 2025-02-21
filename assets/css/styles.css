@@ -20,9 +20,49 @@ a {
 /* Header / Hero Section */
 header {
   background: url('header-image.jpg') no-repeat center center/cover;
-  color: #444;
+  color: #ffffff;
   text-align: center;
   padding: 100px 20px;
+}
+/* Header / Hero Section with Animated Gradient */
+header {
+  /* Animated gradient background */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  color: #ffffff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+header .cta {
+  background: #444;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 3px;
+  display: inline-block;
 }
 
 header h1 {
