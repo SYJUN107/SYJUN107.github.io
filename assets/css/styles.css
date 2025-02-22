@@ -40,7 +40,7 @@ a {
 /* Keyframes for the shooting animation */
 @keyframes shoot {
   0% {
-    transform: translate(0, 0) rotate(225deg);
+    transform: translate(0px, 0px) rotate(225deg);
     opacity: 1;
   }
   100% {
