@@ -8,17 +8,19 @@ function createShootingStar() {
         // Opción 1: Aparece en la parte superior
         star.style.top = '0px';
         // La posición horizontal puede ser en cualquier parte del ancho
-        star.style.left = Math.random() * window.innerWidth + 'px';
+        star.style.left = window.innerWidth * 0.35 + Math.random() * (window.innerWidth * 0.65) + 'px';
     } else {
         // Opción 2: Aparece en el lado derecho
         star.style.left = window.innerWidth + 'px';
         // Solo en la mitad superior (por encima del 50% de la altura)
-        star.style.top = Math.random() * (window.innerHeight * 0.75) + 'px';
+        star.style.top = Math.random() * (window.innerHeight * 0.20) + 'px';
     }    
+
+    
 
     // Randomize the animation duration for variety (0.8s to 2.0s)
     // const duration = 0.8 + Math.random() * 1.2;
-    const duration = 4
+    const duration = 3
     star.style.animationDuration = duration + 's';
     
     // Append the star to the container
@@ -31,4 +33,4 @@ function createShootingStar() {
     }
     
     // Generate shooting stars at regular intervals
-    setInterval(createShootingStar, 1000);
+    setInterval(createShootingStar, 500);
