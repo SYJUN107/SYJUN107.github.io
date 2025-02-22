@@ -18,6 +18,15 @@ a {
 }
 
 
+header {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
 .shooting-stars {
   position: absolute;
   top: 0;
@@ -27,7 +36,6 @@ a {
   pointer-events: none;
 }
 
-/* Estilo base para cada estrella pixelada */
 .shooting-star {
   position: absolute;
   width: 4px;
@@ -37,14 +45,13 @@ a {
   animation: shooting 3s linear infinite;
 }
 
-/* Pseudo-elemento para la cola de la estrella */
 .shooting-star::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 4px;
-  height: 40px; /* Cola más larga */
+  height: 40px;
   background: #fff;
   image-rendering: pixelated;
   opacity: 0.8;
@@ -52,34 +59,6 @@ a {
   animation: tail 3s linear infinite;
 }
 
-/* Posiciones de ejemplo para cada estrella */
-.shooting-stars .shooting-star:nth-child(1) {
-  top: 15%;
-  left: 80%;
-  animation-delay: 0s;
-}
-.shooting-stars .shooting-star:nth-child(2) {
-  top: 30%;
-  left: 90%;
-  animation-delay: 0.5s;
-}
-.shooting-stars .shooting-star:nth-child(3) {
-  top: 45%;
-  left: 70%;
-  animation-delay: 1s;
-}
-.shooting-stars .shooting-star:nth-child(4) {
-  top: 60%;
-  left: 85%;
-  animation-delay: 1.5s;
-}
-.shooting-stars .shooting-star:nth-child(5) {
-  top: 75%;
-  left: 65%;
-  animation-delay: 2s;
-}
-
-/* Keyframes para mover la estrella en diagonal hacia la izquierda */
 @keyframes shooting {
   0% {
     opacity: 1;
@@ -95,7 +74,6 @@ a {
   }
 }
 
-/* Keyframes para la cola de la estrella */
 @keyframes tail {
   0% { opacity: 0.8; }
   70% { opacity: 0.8; }
