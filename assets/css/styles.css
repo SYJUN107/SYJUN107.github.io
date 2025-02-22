@@ -121,7 +121,26 @@ section h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+  overflow-x: auto;  /* Habilita el desplazamiento horizontal */
+  overflow-y: hidden;
+  cursor: grab;      /* Indica que se puede arrastrar */
+  /* Opcional: ocultar barra de scroll en navegadores WebKit */
+  -webkit-overflow-scrolling: touch;
 }
+
+/* Cambia el cursor mientras se arrastra */
+.section-grid.active {
+  cursor: grabbing;
+}
+
+/* Ejemplo de estilo para los items del grid */
+.section-grid div {
+  background: #ccc;
+  padding: 20px;
+  border: 1px solid #999;
+  text-align: center;
+}
+
 
 .card {
   background: #f9f9f9;
