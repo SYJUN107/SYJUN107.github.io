@@ -1,36 +1,36 @@
-// Function to create a shooting star element with randomized properties
 function createShootingStar() {
     const star = document.createElement('div');
     star.classList.add('shooting-star');
     
     // Decidir aleatoriamente la posición de inicio
     if (Math.random() < 0.90) {
-        // Opción 1: Aparece en la parte superior
-        star.style.top = '0px';
-        // La posición horizontal puede ser en cualquier parte del ancho
-        star.style.left = window.innerWidth * 0.35 + Math.random() * (window.innerWidth * 0.65) + 'px';
+      // Opción 1: Aparece desde el borde superior,
+      // posicionándolo con un top negativo para que solo se asome la cabeza.
+      // Si la altura es de 300px, por ejemplo, con -250px solo quedarán visibles 50px.
+      star.style.top = '-250px';
+      // La posición horizontal: entre el 35% y el 100% del ancho de la ventana
+      star.style.left = window.innerWidth * 0.35 + Math.random() * (window.innerWidth * 0.65) + 'px';
     } else {
-        // Opción 2: Aparece en el lado derecho
-        star.style.left = window.innerWidth + 'px';
-        // Solo en la mitad superior (por encima del 50% de la altura)
-        star.style.top = Math.random() * (window.innerHeight * 0.20) + 'px';
-    }    
-
-    
-
-    // Randomize the animation duration for variety (0.8s to 2.0s)
-    // const duration = 0.8 + Math.random() * 1.2;
-    const duration = 3.5
+      // Opción 2: Aparece desde el borde derecho,
+      // Dejamos la estrella fuera del contenedor para que se asome.
+      star.style.left = window.innerWidth + 'px';
+      // En este caso, la estrella aparecerá solo en la mitad superior (por encima del 20% de la altura)
+      star.style.top = Math.random() * (window.innerHeight * 0.20) + 'px';
+    }
+  
+    // Usamos una duración fija para que la velocidad sea constante
+    const duration = 3.5;
     star.style.animationDuration = duration + 's';
     
-    // Append the star to the container
+    // Agregar la estrella al contenedor
     document.querySelector('.shooting-stars').appendChild(star);
     
-    // Remove the star after its animation completes
+    // Remover la estrella después de que la animación termina
     setTimeout(() => {
-        star.remove();
-    }, duration * 4000);
-    }
-    
-    // Generate shooting stars at regular intervals
-    setInterval(createShootingStar, 700);
+      star.remove();
+    }, duration * 1000);
+  }
+  
+  // Generar estrellas a intervalos regulares
+  setInterval(createShootingStar, 700);
+  
