@@ -121,7 +121,8 @@ section h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  overflow-x: scroll;  /* Habilita el desplazamiento horizontal */
+  overflow-x: auto;  /* Habilita el desplazamiento horizontal */
+  overflow-y: hidden; /* Deshabilita el desplazamiento vertical */
   cursor: grab;
   -webkit-overflow-scrolling: touch;
 }

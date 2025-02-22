@@ -1,4 +1,5 @@
 function createShootingStar() {
+    const header = document.querySelector('header');
     const star = document.createElement('div');
     star.classList.add('shooting-star');
     
@@ -15,7 +16,8 @@ function createShootingStar() {
       // Dejamos la estrella fuera del contenedor para que se asome.
       star.style.left = window.innerWidth + 'px';
       // En este caso, la estrella aparecerá solo en la mitad superior (por encima del 20% de la altura)
-      star.style.top = Math.random() * (window.innerHeight * 0.20) + 'px';
+      star.style.top = Math.random() * (header.offsetHeight * 0.30) + 'px';
+    //   star.style.top = Math.random() * (window.innerHeight * 0.20) + 'px';
     }
   
     // Usamos una duración fija para que la velocidad sea constante
@@ -32,5 +34,5 @@ function createShootingStar() {
   }
   
   // Generar estrellas a intervalos regulares
-  setInterval(createShootingStar, 1000);
+  setInterval(createShootingStar, 2000);
   
