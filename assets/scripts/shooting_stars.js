@@ -1,19 +1,20 @@
+// Genera estrellas fugaces en posiciones aleatorias dentro del header
 const container = document.querySelector('.shooting-stars');
-const numStars = 10; // Número de estrellas a generar
+const numStars = 10; // Puedes ajustar la cantidad de estrellas
 
 for (let i = 0; i < numStars; i++) {
-  const star = document.createElement('div');
-  star.classList.add('shooting-star');
-  
-  // Asigna posiciones aleatorias dentro del header
-  const topPos = Math.random() * 100;   // porcentaje para top
-  const leftPos = Math.random() * 100;  // porcentaje para left
-  star.style.top = `${topPos}%`;
-  star.style.left = `${leftPos}%`;
-  
-  // Agrega un retraso aleatorio a la animación para variar el inicio
-  const delay = Math.random() * 3; // retraso entre 0 y 3 segundos
-  star.style.animationDelay = `${delay}s`;
-  
-  container.appendChild(star);
+    const star = document.createElement('div');
+    star.classList.add('shooting-star');
+
+    // Posiciones aleatorias en porcentaje
+    const topPos = Math.random() * 100;
+    const leftPos = Math.random() * 100;
+    star.style.top = `${topPos}%`;
+    star.style.left = `${leftPos}%`;
+
+    // Retraso aleatorio para variar el inicio de la animación
+    const delay = Math.random() * 2.5;
+    star.style.animationDelay = `${delay}s`;
+
+    container.appendChild(star);
 }

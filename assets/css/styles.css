@@ -17,16 +17,7 @@ a {
   color: inherit;
 }
 
-
-header {
-  position: relative;
-  overflow: hidden;
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-}
-
+/* Contenedor para las estrellas fugaces */
 .shooting-stars {
   position: absolute;
   top: 0;
@@ -36,47 +27,50 @@ header {
   pointer-events: none;
 }
 
+/* Estilo base para cada estrella fugaz */
 .shooting-star {
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: #fff;
-  image-rendering: pixelated;
-  animation: shooting 3s linear infinite;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  animation: shooting 2.5s linear infinite;
 }
 
+/* Cola de la estrella */
 .shooting-star::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
-  height: 40px;
-  background: #fff;
-  image-rendering: pixelated;
-  opacity: 0.8;
-  transform: translate(4px, -4px);
-  animation: tail 3s linear infinite;
+  width: 6px;
+  height: 50px;
+  background: linear-gradient(to bottom, #fff, rgba(255,255,255,0));
+  opacity: 0.7;
+  transform: translate(6px, -6px);
+  animation: tail 2.5s linear infinite;
 }
 
+/* Animación para el movimiento diagonal hacia la izquierda */
 @keyframes shooting {
   0% {
     opacity: 1;
     transform: translate(0, 0);
   }
-  80% {
+  70% {
     opacity: 1;
-    transform: translate(-300px, 300px);
+    transform: translate(-400px, 400px);
   }
   100% {
     opacity: 0;
-    transform: translate(-300px, 300px);
+    transform: translate(-400px, 400px);
   }
 }
 
+/* Animación para la cola */
 @keyframes tail {
-  0% { opacity: 0.8; }
-  70% { opacity: 0.8; }
+  0% { opacity: 0.7; }
+  70% { opacity: 0.7; }
   100% { opacity: 0; }
 }
 
