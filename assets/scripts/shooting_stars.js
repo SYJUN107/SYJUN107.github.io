@@ -3,7 +3,7 @@ function createShootingStar() {
     star.classList.add('shooting-star');
     
     // Decidir aleatoriamente la posición de inicio
-    if (Math.random() < 0.90) {
+    if (Math.random() < 0.80) {
       // Opción 1: Aparece desde el borde superior,
       // posicionándolo con un top negativo para que solo se asome la cabeza.
       // Si la altura es de 300px, por ejemplo, con -250px solo quedarán visibles 50px.
@@ -32,5 +32,5 @@ function createShootingStar() {
   }
   
   // Generar estrellas a intervalos regulares
-  setInterval(createShootingStar, 700);
+  setInterval(createShootingStar, 1000);
   
