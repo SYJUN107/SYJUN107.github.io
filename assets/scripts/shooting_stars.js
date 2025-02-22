@@ -21,4 +21,4 @@ function createShootingStar() {
     }
     
     // Generate shooting stars at regular intervals
-    setInterval(createShootingStar, 500);
+    setInterval(createShootingStar, 300);
