@@ -3,8 +3,8 @@ function createShootingStar() {
     const star = document.createElement('div');
     star.classList.add('shooting-star');
     
-    // La posición vertical se define en la parte superior (dentro del 25% superior de la ventana)
-    star.style.top = Math.random() * (window.innerHeight * 0.20) + 'px';
+    // La posición vertical se define en la parte superior (dentro del 10% superior de la ventana)
+    star.style.top = Math.random() * (window.innerHeight * 0.10) + 'px';
     
     // La posición horizontal se define entre el 25% y el 100% del ancho de la ventana
     star.style.left = window.innerWidth * 0.35 + Math.random() * (window.innerWidth * 0.65) + 'px';
@@ -24,4 +24,4 @@ function createShootingStar() {
     }
     
     // Generate shooting stars at regular intervals
-    setInterval(createShootingStar, 400);
+    setInterval(createShootingStar, 800);
